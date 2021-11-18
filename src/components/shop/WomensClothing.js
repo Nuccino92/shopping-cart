@@ -3,7 +3,8 @@ import fetchProducts from "../../resources/fetchProducts";
 import uniqid from "uniqid";
 import { useState, useEffect } from "react";
 
-const WomensClothing = () => {
+const WomensClothing = (props) => {
+  const { addToCart } = props;
   const [womensClothing, setWomensClothing] = useState([]);
 
   useEffect(() => {
@@ -16,7 +17,7 @@ const WomensClothing = () => {
   return (
     <div>
       {womensClothing.map((product) => {
-        return <Product key={uniqid()} info={product} />;
+        return <Product addToCart={addToCart} key={uniqid()} info={product} />;
       })}
     </div>
   );
