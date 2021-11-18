@@ -1,0 +1,7 @@
+.cartSticky {
+  display: none;
+}
+
+.cartSticky.active {
+  display: initial;
+}
