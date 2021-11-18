@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 
-const Header = () => {
+const Header = (props) => {
+  const { handleCartActive, numberOfItems } = props;
   return (
     <header>
       <nav>
@@ -10,9 +11,7 @@ const Header = () => {
         <Link to="/shop">
           <li>Categories</li>
         </Link>
-        <Link to="/cart">
-          <li>Cart</li>
-        </Link>
+        <li onClick={() => handleCartActive()}>Cart {numberOfItems}</li>
       </nav>
     </header>
   );
