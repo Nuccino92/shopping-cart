@@ -21,6 +21,43 @@ function App() {
     setIsCartActive(!isCartActive);
   };
 
+  function handleInputField(title, quantity, e) {
+    let newCart = [...cart];
+    const { value } = e.target;
+
+    if (value < 0) {
+      return;
+    }
+
+    newCart.map((product) => {
+      return product.title === title ? (product.quantity = value) : product;
+    });
+    setCart(newCart);
+  }
+
+  const handleCartIncrements = (title, quantity, e) => {
+    const { innerText } = e.target;
+    let newCart = [...cart];
+
+    function checkInnerText(product) {
+      if (innerText === "-" && product.quantity <= 0) {
+        return;
+      }
+      if (innerText === "+") {
+        product.quantity++;
+      } else product.quantity--;
+
+      return product;
+    }
+
+    newCart.map((product) => {
+      return product.title === title
+        ? (product = checkInnerText(product))
+        : product;
+    });
+    setCart(newCart);
+  };
+
   const addToCart = (title, quantity, price) => {
     let newCart = [...cart];
     const alreadyAdded = cart.find((product) => product.title === title);
@@ -42,16 +79,26 @@ function App() {
     setCart(newCart);
   };
 
+  const getTotalCost = () => {
+    let total = 0;
+    cart.map((product) => {
+      return (total += product.quantity * product.price);
+    });
+    return total.toFixed(2);
+  };
+
   const getNumberOfProducts = () => {
     let total = 0;
     cart.map((product) => {
-      return (total += product.quantity);
+      // converts inputfield string into number for use
+      return (total += parseFloat(product.quantity));
     });
     return total;
   };
 
   useEffect(() => {
     setNumberOfItems(getNumberOfProducts());
+    setTotalCost(getTotalCost());
   }, [cart]);
 
   return (
@@ -86,9 +133,12 @@ function App() {
           />
         </Routes>
         <Cart
+          totalCost={totalCost}
           cart={cart}
           active={isCartActive}
           removeFromCart={removeFromCart}
+          handleCartIncrements={handleCartIncrements}
+          handleInputField={handleInputField}
         />
       </div>
     </BrowserRouter>
