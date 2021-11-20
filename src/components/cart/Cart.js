@@ -1,21 +1,31 @@
 import { Link } from "react-router-dom";
 import CartItem from "./CartItem";
-import uniqid from "uniqid";
 
 const Cart = (props) => {
-  const { active, cart, removeFromCart } = props;
+  const {
+    active,
+    cart,
+    removeFromCart,
+    totalCost,
+    handleCartIncrements,
+    handleInputField,
+  } = props;
+
   return (
     <div className={active ? "cartSticky active" : "cartSticky"}>
       Cart
-      {cart.map((product) => {
+      {cart.map((product, index) => {
         return (
           <CartItem
             removeFromCart={removeFromCart}
+            handleCartIncrements={handleCartIncrements}
+            handleInputField={handleInputField}
             product={product}
-            key={uniqid()}
+            key={index}
           />
         );
       })}
+      <div>{totalCost}</div>
       <Link to="/checkout">
         <button>Proceed to Checkout</button>
       </Link>
