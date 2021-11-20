@@ -19,15 +19,22 @@ const Shop = () => {
   };
 
   return (
-    <div>
-      {categories.map((category) => {
-        return (
-          <Link to={`/shop/${category}`} key={uniqid()}>
-            <Category category={category} />
-          </Link>
-        );
-      })}
+    <div className="categories-container">
+      <div className="child-for-image"></div>
+      <div className="categories-container-inner">
+        {categories.map((category) => {
+          return (
+            <Link style={style} to={`/shop/${category}`} key={uniqid()}>
+              <Category category={category} />
+            </Link>
+          );
+        })}
+      </div>
     </div>
   );
+};
+
+const style = {
+  color: "black",
 };
 export default Shop;
