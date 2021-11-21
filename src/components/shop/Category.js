@@ -1,6 +1,5 @@
 const Category = (props) => {
   const { category } = props;
-  console.log(category);
 
   const getId = (category) => {
     if (category === "electronics") return "electronics-img";
