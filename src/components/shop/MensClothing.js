@@ -15,10 +15,16 @@ const MensClothing = (props) => {
   }, []);
 
   return (
-    <div>
-      {mensClothing.map((product) => {
-        return <Product addToCart={addToCart} key={uniqid()} info={product} />;
-      })}
+    <div className="product-outer">
+      <div className="child-for-image"></div>
+      <h3>Men's Clothing</h3>
+      <div className="product-graph">
+        {mensClothing.map((product) => {
+          return (
+            <Product addToCart={addToCart} key={uniqid()} info={product} />
+          );
+        })}
+      </div>
     </div>
   );
 };
