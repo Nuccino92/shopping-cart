@@ -1,0 +1,94 @@
+.product-outer {
+  justify-content: center;
+  align-content: center;
+  position: relative;
+  height: 100%;
+  width: 100%;
+  background-color: white;
+  cursor: default;
+}
+
+.child-for-image {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  background-image: url(../components/shop/images/product-background.jpeg);
+  width: 100%;
+  height: 330px;
+}
+
+.product-outer > h3 {
+  font-size: 37px;
+  text-align: center;
+  margin-top: 30px;
+}
+
+.product-outer > .product-graph {
+  margin-top: 20px;
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(3, 0fr);
+  width: 100%;
+  justify-content: center;
+}
+
+.product {
+  margin: 30px;
+  display: flex;
+  justify-content: center;
+}
+
+.product > .product-container {
+  position: relative;
+  height: 500px;
+  width: 300px;
+  background-color: white;
+  overflow: hidden;
+  padding: 7px;
+}
+
+.product > .product-container > h3 {
+  font-size: 15px;
+  padding: 10px;
+}
+
+.product > .product-container > p {
+  padding: 0 0 3px 12px;
+  color: red;
+}
+
+.product > .product-container > button {
+  cursor: pointer;
+  background: none;
+  border: none;
+  font-size: 15px;
+  color: rgb(34, 141, 39);
+  padding-left: 12px;
+}
+
+.product > .product-container > button:hover {
+  color: rgb(10, 212, 3);
+}
+
+.product > .product-container .product-image-container {
+  height: 70%;
+  width: 100%;
+  padding: 40px;
+}
+
+.product-image-container > .product-image {
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  height: 80%;
+  width: 100%;
+}
+
+.product > p {
+  border: 1px solid black;
+  word-wrap: break-word;
+  width: 100%;
+}
+
+.product:hover {
+  content: attr(title);
+}
