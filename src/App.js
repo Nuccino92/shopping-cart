@@ -99,6 +99,7 @@ function App() {
   const toggleCartModal = (e) => {
     if (e.target.className === "shopping-cart-image") setIsCartActive(true);
     if (e.target.parentNode.className === "App") setIsCartActive(false);
+    if (e.target.className === "checkout-btn") setIsCartActive(false);
   };
 
   useEffect(() => {
@@ -134,7 +135,15 @@ function App() {
           />
           <Route
             path="/checkout"
-            element={<Checkout cart={cart} removeFromCart={removeFromCart} />}
+            element={
+              <Checkout
+                totalCost={totalCost}
+                cart={cart}
+                removeFromCart={removeFromCart}
+                handleCartIncrements={handleCartIncrements}
+                handleInputField={handleInputField}
+              />
+            }
           />
         </Routes>
         <Cart
