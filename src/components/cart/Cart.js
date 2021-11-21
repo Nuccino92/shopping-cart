@@ -17,7 +17,7 @@ const Cart = (props) => {
         <h3>Your Total Cost </h3>
         <h4>${totalCost}</h4>
         <Link className="link-checkout" to="/checkout">
-          <button>Proceed to Checkout</button>
+          <button className="checkout-btn">Proceed to Checkout</button>
         </Link>
         <div className="cart-items-container">
           {cart.map((product, index) => {
