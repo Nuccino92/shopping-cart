@@ -40,10 +40,10 @@ function App() {
     let newCart = [...cart];
 
     function checkInnerText(product) {
-      if (innerText === "-" && product.quantity <= 0) {
+      if (innerText === "←" && product.quantity <= 0) {
         return;
       }
-      if (innerText === "+") {
+      if (innerText === "→") {
         product.quantity++;
       } else product.quantity--;
 
@@ -58,7 +58,7 @@ function App() {
     setCart(newCart);
   };
 
-  const addToCart = (title, quantity, price) => {
+  const addToCart = (title, quantity, price, image) => {
     let newCart = [...cart];
     const alreadyAdded = cart.find((product) => product.title === title);
 
@@ -70,7 +70,7 @@ function App() {
       });
       return setCart(newCart);
     } else {
-      setCart((prev) => [...prev, { title, quantity, price }]);
+      setCart((prev) => [...prev, { title, quantity, price, image }]);
     }
   };
 
@@ -96,6 +96,11 @@ function App() {
     return total;
   };
 
+  const toggleCartModal = (e) => {
+    if (e.target.className === "shopping-cart-image") setIsCartActive(true);
+    if (e.target.parentNode.className === "App") setIsCartActive(false);
+  };
+
   useEffect(() => {
     setNumberOfItems(getNumberOfProducts());
     setTotalCost(getTotalCost());
@@ -103,7 +108,7 @@ function App() {
 
   return (
     <BrowserRouter>
-      <div className="App">
+      <div onClick={(e) => toggleCartModal(e)} className="App">
         <Header
           numberOfItems={numberOfItems}
           handleCartActive={handleCartActive}
