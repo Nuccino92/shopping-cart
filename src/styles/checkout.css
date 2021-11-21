@@ -1,0 +1,155 @@
+.checkout {
+  position: relative;
+  display: flex;
+  height: 100%;
+  width: 100%;
+  background-color: rgb(234, 237, 237);
+  padding: 80px;
+  justify-content: space-between;
+}
+
+.checkout-inner-container {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid rgb(199, 197, 197);
+  padding: 25px;
+  background-color: white;
+}
+
+.checkout-inner {
+  height: 550px;
+  width: 750px;
+  border: 1px solid rgb(199, 197, 197);
+  background-color: white;
+  overflow-y: scroll;
+}
+
+.confirm-purchase {
+  padding: 16px 10px 0 10px;
+  bottom: 0;
+  right: 0;
+}
+
+.confirm-purchase > p {
+  font-size: 22px;
+  color: rgb(209, 133, 12);
+  margin-bottom: 5px;
+}
+
+.confirm-purchase > button {
+  font-size: 17px;
+  color: rgb(209, 133, 12);
+  cursor: pointer;
+  border: 1px solid grey;
+  background: #131921;
+  border-radius: 5px;
+  font-weight: bold;
+  border: 1px solid blue;
+}
+
+.confirm-purchase > button:hover {
+  filter: brightness(1.2);
+  border: 1px solid rgb(40, 40, 165);
+}
+
+.checkout-items {
+  position: relative;
+  display: flex;
+  padding: 5px;
+  margin: 7px 0 7px 0;
+}
+
+.checkout-items:hover {
+  opacity: 0.8;
+}
+
+.checkout-items > h3 {
+  font-size: 13px;
+  height: min-content;
+  width: 200px;
+  margin: 5px;
+}
+
+.checkout-items > p {
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin: 3px;
+  color: rgb(11, 129, 30);
+  font-weight: bold;
+}
+
+.checkout-image-container {
+  position: relative;
+  height: 100px;
+  width: 110px;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  margin: 5px;
+}
+
+.checkout-input-container {
+  display: flex;
+  flex-direction: row;
+  width: 30px;
+  height: 25px;
+  position: absolute;
+  bottom: 5%;
+  left: 40%;
+}
+
+.checkout-input-container > input {
+  width: 50px;
+  text-align: center;
+  color: white;
+  background-color: black;
+  border: 1px solid white;
+}
+
+.checkout-input-container > button {
+  cursor: pointer;
+  background-color: black;
+  color: white;
+  font-weight: bold;
+  width: 30px;
+  border: none;
+  outline: none;
+  border: 1px solid white;
+}
+
+.remove-btn {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  margin: 0 14px 8px 0;
+  cursor: pointer;
+  color: red;
+  font-weight: bolder;
+  font-size: 23px;
+  cursor: pointer;
+}
+
+.remove-btn:hover {
+  content: attr(title);
+  color: rgb(141, 1, 1);
+}
+
+.checkout-ad-image {
+  position: absolute;
+  background-image: url(../components/cart/main-offer.png);
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  height: 400px;
+  width: 600px;
+  top: 15%;
+  right: 7%;
+  margin-left: 200px;
+  border: 2px solid rgb(209, 133, 12);
+  cursor: pointer;
+}
+
+@media (max-width: 1620px) {
+  .checkout-ad-image {
+    display: none;
+  }
+}
