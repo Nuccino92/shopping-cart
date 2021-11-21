@@ -6,6 +6,7 @@ header {
   height: 11vh;
   color: white;
   background-color: #131921;
+  cursor: default;
 }
 
 .headerContentContainer {
