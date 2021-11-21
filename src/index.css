@@ -4,6 +4,7 @@
 @import url(./styles/home.css);
 @import url(./styles/category.css);
 @import url(./styles/product.css);
+@import url(./styles/checkout.css);
 
 * {
   margin: 0;
@@ -12,6 +13,5 @@
 }
 
 body {
-  background-color: lavender;
   height: 100%;
 }
