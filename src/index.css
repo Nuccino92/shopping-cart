@@ -3,6 +3,7 @@
 @import url(./styles/header.css);
 @import url(./styles/home.css);
 @import url(./styles/category.css);
+@import url(./styles/product.css);
 
 * {
   margin: 0;
