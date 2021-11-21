@@ -11,6 +11,7 @@
   margin-top: 150px;
 }
 
+/* background image child */
 .categories-container > .child-for-image {
   background-image: url(../components/shop/images/shoppingbag-background.jpeg);
   position: fixed;
@@ -28,6 +29,11 @@
   width: 280px;
   background-color: #131921;
   box-shadow: 0px 2px 10px grey;
+  border-top: 4px solid #131921;
+  border-left: 4px solid #131921;
+  border-right: 4px solid #131921;
+  border-bottom-left-radius: 12px;
+  border-bottom-right-radius: 12px;
 }
 
 .category-container:hover {
