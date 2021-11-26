@@ -3,13 +3,10 @@ import "./App.css";
 import Header from "./components/header/Header";
 import Home from "./components/home/Home";
 import Shop from "./components/shop/Shop";
-import Electronics from "./components/shop/Electronics";
-import Jewelery from "./components/shop/Jewelery";
-import MensClothing from "./components/shop/MensClothing";
-import WomensClothing from "./components/shop/WomensClothing";
 import Checkout from "./components/cart/Checkout";
 import Cart from "./components/cart/Cart";
 import useCart from "./hooks/useCart";
+import EachCategory from "./components/shop/EachCategory";
 
 function App() {
   const {
@@ -36,20 +33,8 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/shop" element={<Shop />} />
           <Route
-            path="/shop/electronics"
-            element={<Electronics addToCart={addToCart} />}
-          />
-          <Route
-            path="/shop/jewelery"
-            element={<Jewelery addToCart={addToCart} />}
-          />
-          <Route
-            path="/shop/men's%20clothing"
-            element={<MensClothing addToCart={addToCart} />}
-          />
-          <Route
-            path="/shop/women's%20clothing"
-            element={<WomensClothing addToCart={addToCart} />}
+            path="/shop/:category"
+            element={<EachCategory addToCart={addToCart} />}
           />
           <Route
             path="/checkout"
