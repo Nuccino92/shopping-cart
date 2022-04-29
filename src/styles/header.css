@@ -1,5 +1,7 @@
 header {
   display: flex;
+  position: fixed;
+  top: 0;
   justify-content: space-evenly;
   align-items: center;
   width: 100vw;
@@ -7,6 +9,7 @@ header {
   color: white;
   background-color: #131921;
   cursor: default;
+  z-index: 100;
 }
 
 .headerContentContainer {

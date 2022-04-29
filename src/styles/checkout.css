@@ -1,10 +1,11 @@
 .checkout {
   position: relative;
   display: flex;
-  height: 100%;
+  height: 100vh;
   width: 100%;
   background-color: rgb(234, 237, 237);
   padding: 80px;
+  align-items: center;
   justify-content: space-between;
 }
 
